@@ -10,8 +10,10 @@ app.engine('handlebars', expressHandlebars({
 }))
 app.set('view engine', 'handlebars')
 
+// eslint-disable-next-line no-undef
 const port = process.env.PORT || 3000
 
+// eslint-disable-next-line no-undef
 app.use(express.static(__dirname + '/public'))
 
 app.get('/', handlers.home)
@@ -25,4 +27,8 @@ app.use(handlers.notFound)
 
 app.use(handlers.serverError)
 
-app.listen(port, () => console.log(`Express started on http://localhost:${port}`))
+if(require.main === module) {
+  app.listen(port, () => console.log(`Express started on http://localhost:${port}`))
+} else {
+  module.exports = app
+}

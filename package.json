@@ -4,15 +4,21 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "lint": "eslint index.js lib"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@types/jest": "^26.0.23",
     "express": "^4.17.1",
-    "express-handlebars": "^5.3.1",
-    "jest": "^26.6.3"
+    "express-handlebars": "^5.3.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.23",
+    "eslint": "^7.25.0",
+    "jest": "^26.6.3",
+    "portfinder": "^1.0.28",
+    "puppeteer": "^9.1.1"
   }
 }
