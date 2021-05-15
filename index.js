@@ -7,6 +7,13 @@ const app = express()
 
 app.engine('handlebars', expressHandlebars({
   defaultLayout: 'main',
+  helpers: {
+    section: function(name, options) {
+      if(!this._sections) this._sections = {}
+      this._sections[name] = options.fn(this);
+      return null
+    }
+  }
 }))
 app.set('view engine', 'handlebars')
 
@@ -19,6 +26,8 @@ app.use(express.static(__dirname + '/public'))
 app.get('/', handlers.home)
 
 app.get('/about', handlers.about)
+
+app.get('/section', handlers.sections)
 
 // custom 404 page
 app.use(handlers.notFound)
