@@ -1,0 +1,26 @@
+<h2>Sign up our newsletter to receive news and specials</h2>
+<form
+  class="form-horizontal"
+  role="form"
+  action="/newsletter-signup/process?form=newsletter"
+  method="POST"
+>
+  <input type="hidden" name="_csrf" value="{{csrf}}">
+  <div class="form-group">
+    <label for="fieldName" class="col-sm-2 control-label">Name</label>
+    <div class="col-sm-4">
+      <input class="form-control" type="text" name="name" id="fieldName">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="fieldEmail" class="col-sm-2 control-label">Email</label>
+    <div class="col-sm-4">
+      <input class="form-control" type="email" name="email" id="fieldEmail" required>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-4">
+      <button type="submit" class="btn btn-prmiary">Register</button>
+    </div>
+  </div>
+</form>
